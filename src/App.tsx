@@ -27,6 +27,12 @@ export default function App(){
 )
 return (
   <>
+  {loading && <p>Loading .......</p>
+  }
+  {
+    error && <h1>{error}</h1>
+  }
+  {!loading && apod &&
   <div className="main">
     <h1>Astronomy Picture Of The Day</h1>
     <input type="date" value={date} onChange={(e)=>setDate(e.target.value)}/>
@@ -35,7 +41,7 @@ return (
       <img src={apod.url} alt={apod.title} width={500} referrerPolicy="no-referrer"/>
     ):(
       <div>
-        <p>Today's APOD is a video</p>
+   
         {/* <button><a href={apod?.hdurl}/>Click here to watch the video</button> */}
       <video src={apod?.url}></video>
       </div>
@@ -45,6 +51,8 @@ return (
     )}
     <p>{apod?.explanation}</p>
   </div>
+  }
+  
   </>
 )
 
