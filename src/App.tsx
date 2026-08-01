@@ -47,7 +47,7 @@ return (
       <div>
    
         {/* <button><a href={apod?.hdurl}/>Click here to watch the video</button> */}
-      <video src={apod?.url}></video>
+      <video src={apod?.url} controls width={500}></video>
       </div>
     )}
     {apod?.media_type==="image" && (
