@@ -3,4 +3,4 @@ NASA APOD(Astronomy Picture Of The Day) is a basic website which is a fun hack c
 This project is a frontend only and uses 
 VITE with React for fetching the fata from Nasa's Public Api
 HTMl and CSS for basic layout and stylying
-TypeScript for typeSafety 
+TypeScript for typesafety 
