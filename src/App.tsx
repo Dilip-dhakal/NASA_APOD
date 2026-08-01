@@ -11,14 +11,17 @@ interface APODData{
   media_type:string
 }
 
+const today=new Date().toISOString().split("T")[0]
+
 export default function App(){
   const [apod, setApod] = useState<APODData | null>(null)
   const [loading,setLoading]=useState<boolean>(true)
   const [error,setError]=useState<string | null>(null)
-  const [date,setDate]=useState("")
+  const [date,setDate]=useState(today)
 
   useEffect(()=>{
     setLoading(true)
+    setError(null)
     fetchAPOD(date)
     .then((data)=>setApod(data))
     .catch((error)=>setError(error.message))
@@ -32,6 +35,7 @@ return (
   {
     error && <h1>{error}</h1>
   }
+  
   {!loading && apod &&
   <div className="main">
     <h1>Astronomy Picture Of The Day</h1>
